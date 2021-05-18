@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const CenteredItems = styled.div`
 	display: flex;
 	justify-content: ${(props) => props.justifyContent || 'center'};
-	align-items: ${(props) => props.alignItems || 'center'};
 	flex-direction: ${(props) => props.flexDirection};
 	flex-wrap: ${(props) => props.flexWrap || 'wrap'};
 	margin: ${(props) => props.margin || '0'};
+	overflow: hidden;
 `;
 
 export const SectionTitle = styled.h1`
@@ -21,17 +21,26 @@ export const SectionTitle = styled.h1`
 
 export const CardTitle = styled.h2`
 	color: ${({ theme }) => theme.colors.secondary};
-	font-size: 25px;
+	font-size: 23px;
+	max-width: 250px;
 	font-family: ${({ theme }) => theme.fonts.titles.card};
 `;
 
 export const ImgContainer = styled.div`
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	width: 250px;
+
 	img {
-		width: 250px;
-		height: 300px;
+		width: 100%;
 	}
+	&:hover {
+		img {
+			transform: scale(1.05);
+			transition: 0.3s;
+		}
+	}
+
 	@media (max-width: 600px) {
 	}
 `;

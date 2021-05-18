@@ -1,20 +1,17 @@
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { faVideo } from '@fortawesome/free-solid-svg-icons';
-import { faTv } from '@fortawesome/free-solid-svg-icons';
-import Home from './Home';
-import Movies from './Movies';
-import Series from './Series';
+import { faHome, faVideo, faTv } from '@fortawesome/free-solid-svg-icons';
+import Home from '../views/Home';
+import Movies from '../views/Movies';
+import Series from '../views/Series';
+import CardDetails from './CardDetails';
 import { theme } from '../styles/theme';
-import { ThemeProvider } from 'styled-components';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 
 const StyledNavBar = styled.nav`
 	display: flex;
 	background-color: ${({ theme }) => theme.colors.secondary};
 }
-
 `;
 
 const StyledLink = styled(Link)`
@@ -46,8 +43,9 @@ const NavBar = () => {
 				</StyledNavBar>
 				<Switch>
 					<Route exact path="/" component={Home} />
-					<Route path="/peliculas/:titles" component={Movies} />
-					<Route path="/series/:titles" component={Series} />
+					<Route path="/peliculas/" component={Movies} />
+					<Route path="/series/" component={Series} />
+					<Route path="/detalle/:id" component={CardDetails} />
 				</Switch>
 			</ThemeProvider>
 		</BrowserRouter>

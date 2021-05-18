@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+// import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
