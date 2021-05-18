@@ -6,7 +6,7 @@ const useFetch = (url) => {
 
 	useEffect(() => {
 		// fetch(findURL(url)).then((res) => res.json()).then((data) => setContent(data.results));
-		fetch(url).then((res) => res.json()).then((data) => setContent(data.results));
+		fetch(url).then((res) => res.json()).then((data) => setContent(data.results.slice(0, 5)));
 	}, []);
 
 	return content;
