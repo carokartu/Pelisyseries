@@ -10,7 +10,10 @@ export const StyledLink = styled(Link)`
 text-decoration: none;
 `;
 
-const StyledSection = styled.section`margin-top: 50px;`;
+const StyledSection = styled.section`
+	margin-top: 60px;
+	margin-bottom: 100px;
+`;
 
 const CardSection = ({ sectionTitle, content }) => {
 	return (

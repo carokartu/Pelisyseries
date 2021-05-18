@@ -1,15 +1,13 @@
 // import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 import useFetch from '../utils/hooks/useFetch';
-import { TRENDYMOVIES_URL, TRENDYSERIES_URL } from '../utils/variables';
+import { TRENDY_MOVIES, TRENDY_TVSERIES } from '../utils/variables';
 import CardSection from '../components/CardSection';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
 
 const Home = () => {
-	const location = useLocation();
-	const trendyMovies = useFetch(TRENDYMOVIES_URL);
-	const trendySeries = useFetch(TRENDYSERIES_URL);
+	const trendyMovies = useFetch(TRENDY_MOVIES);
+	const trendySeries = useFetch(TRENDY_TVSERIES);
 
 	return (
 		<div>
