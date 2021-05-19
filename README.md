@@ -11,6 +11,6 @@ I've never been acquanted with such a full instruction in a bootcamp before, nor
 Javascript, React, Styled components, Responsive Design, API REST. 
 
 ### Where to visit it
-#### I'm anxious too!
+#### it is still under construction, so plenty of its functioning and layouts are not a final result. But here it goes:
 
-[Wait for it....!!!🕒🏊‍♂️🤾🚴]
+[https://pelisyseries.netlify.app/]
