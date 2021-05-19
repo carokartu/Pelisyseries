@@ -1,15 +1,18 @@
 export const theme = {
 	fonts: {
 		titles: {
-			section: 'Girassol',
+			section: 'Mountains of Christmas',
 			card: 'Open Sans Condensed'
-		}
+		},
+		alternative: 'Itim',
+		alternative2: 'Chela One',
+		alternative3: 'Girassol'
 	},
 	colors: {
 		primary: '#79B791',
-		secondary: '#301014',
+		secondary: '#394F49',
 		text: '#EDF4ED',
-		background: '#ABD1B5'
+		background: '#301014'
 	},
 	sizes: {
 		title: '30px',
