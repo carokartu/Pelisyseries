@@ -9,10 +9,13 @@ const CardDetails = () => {
 	const params = useParams();
 
 	useEffect(() => {
-		fetch(retrieveInfo(`movie/${params.id}`)).then((res) => res.json()).then((data) => setDetail(data));
+		fetch(retrieveInfo(`${'movie' || 'tv'}/${params.id}`))
+			.then((res) => res.json())
+			.then((data) => setDetail(data));
 	}, []);
 	return (
 		<Card
+			isDetail={true}
 			key={detail.title || detail.name}
 			title={detail.title || detail.name}
 			img={BACKDROPIMAGE + detail.backdrop_path}

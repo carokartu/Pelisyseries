@@ -37,6 +37,7 @@ const CardSection = ({ sectionTitle, content }) => {
 				{content.map((item) => (
 					<StyledLink key={item.id} to={`/detalle/${item.id}`}>
 						<Card
+							isDetail={false}
 							key={item.title || item.name}
 							title={item.title || item.name}
 							img={POSTERIMAGE + item.poster_path}
