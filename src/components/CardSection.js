@@ -3,10 +3,8 @@ import Card from './Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { CenteredItems, SectionTitle } from './Commons';
-import { stringToUpperCase } from '../utils/variables';
+import { stringToUpperCase, POSTERIMAGE } from '../utils/variables';
 import styled from 'styled-components';
-
-const IMAGE = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2';
 
 export const StyledLink = styled(Link)`
 text-decoration: none;
@@ -15,6 +13,13 @@ text-decoration: none;
 const StyledSection = styled.section`
 	margin-top: 60px;
 	margin-bottom: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	@media (min-width: 840px) and (max-width: 1050px) {
+		max-width: 80%;
+		margin-left: 100px;
+	}
 `;
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -29,12 +34,12 @@ const CardSection = ({ sectionTitle, content }) => {
 				<StyledIcon icon={faArrowRight} />
 			</SectionTitle>
 			<CenteredItems flexDirection="row">
-				{content.map((movie) => (
-					<StyledLink key={movie.id} to={`/detalle/${movie.id}`}>
+				{content.map((item) => (
+					<StyledLink key={item.id} to={`/detalle/${item.id}`}>
 						<Card
-							key={movie.title || movie.name}
-							title={movie.title || movie.name}
-							img={IMAGE + movie.backdrop_path}
+							key={item.title || item.name}
+							title={item.title || item.name}
+							img={POSTERIMAGE + item.poster_path}
 						/>
 					</StyledLink>
 				))}

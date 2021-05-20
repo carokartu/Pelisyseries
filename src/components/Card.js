@@ -5,11 +5,11 @@ import NoPhoto from '../utils/No-Photo-Available.jpg';
 
 const Card = ({ title, img }) => {
 	return (
-		<CenteredItems flexDirection="column" margin="5px" justifyContent="space-between">
+		<CenteredItems flexDirection="column" margin="5px">
 			<ImgContainer>
 				<img alt={`poster de ` + title} src={img || NoPhoto} />
 			</ImgContainer>
-			<CenteredItems flexDirection="column" alignItems="center">
+			<CenteredItems flexDirection="column">
 				<ThemeProvider theme={theme}>
 					<CardTitle>{title}</CardTitle>
 				</ThemeProvider>

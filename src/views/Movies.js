@@ -6,7 +6,6 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
 
 const Movies = () => {
-	console.log('trying branches');
 	const popular = useFetch(POPULAR_MOVIES);
 	const bestRated = useFetch(BESTRATED_MOVIES);
 	const upComing = useFetch(UPCOMING_MOVIES);
