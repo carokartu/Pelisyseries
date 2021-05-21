@@ -16,9 +16,6 @@ margin: 15px;
 &:hover {
 	color: ${({ theme }) => theme.colors.text};
 }
-@media (max-width: ${theme.breakpoints.small}) {
-	
-}
 `;
 
 const NavBar = () => {

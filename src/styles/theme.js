@@ -15,12 +15,13 @@ export const theme = {
 		background: '#301014'
 	},
 	sizes: {
-		title: '30px',
-		mobileTitle: '20px'
+		sectionTitle: '25px',
+		cardTitle: '20px',
+		mobileTitle: '1em'
 	},
 	breakpoints: {
-		small: '600px',
-		medium: '900px',
-		large: '1200px'
+		small: '(max-width: 600px)',
+		medium: '(min-width: 600px) and (max-width: 840px)',
+		large: '(min-width: 840px)'
 	}
 };

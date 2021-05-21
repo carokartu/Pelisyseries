@@ -13,24 +13,24 @@ export const SectionTitle = styled.h1`
 	display: flex;
 	align-items: center;
 	cursor: pointer;
-	font-size: 25px;
+	font-size: ${({ theme }) => theme.sizes.sectionTitle};
 	font-family: ${({ theme }) => theme.fonts.titles.section};
 	letter-spacing: 4px;
 	margin: 20px;
-	@media (max-width: 600px) {
-		font-size: 1em;
+	@media ${({ theme }) => theme.breakpoints.small} {
+		font-size: ${({ theme }) => theme.sizes.mobileTitle};
 	}
 `;
 
 export const CardTitle = styled.h2`
 	color: ${({ theme }) => theme.colors.text};
-	font-size: 20px;
+	font-size: ${({ theme }) => theme.sizes.cardTitle};
 	max-width: 200px;
 	text-align: center;
 	letter-spacing: 1px;
 	font-family: ${({ theme }) => theme.fonts.titles.card};
-	@media (max-width: 600px) {
-		font-size: 1em;
+	@media ${({ theme }) => theme.breakpoints.small} {
+		font-size: ${({ theme }) => theme.sizes.mobileTitle};
 		max-width: 150px;
 	}
 `;
@@ -54,7 +54,7 @@ export const ImgContainer = styled.div`
 		max-width: 200px;
 		min-height: 200px;
 	}
-	@media (max-width: 600px) {
+	@media ${({ theme }) => theme.breakpoints.small} {
 		max-width: 165px;
 	}
 `;
