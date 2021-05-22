@@ -29,7 +29,8 @@ box-shadow: ${({ shadow }) => shadow};
 		border-bottom: ${({ border }) => border};
 	}
 	@media (max-width: 700px) {
-		margin: ${({ margin }) => margin}
+		margin: ${({ margin }) => margin};
+		font-size: ${({ fontSize }) => fontSize}
 	}
 `;
 

@@ -1,24 +1,23 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faTwitter, faFacebookSquare, faLink, faImdb, faInstagram } from '@fortawesome/free-solid-svg-icons';
+import { faTwitter, faFacebookSquare, faLink, faImdb, faInstagram } from '@fortawesome/free-solid-svg-icons';
 import { retrieveInfo, BACKDROPIMAGE, POSTERIMAGE } from '../utils/variables';
 import Card from '../components/Card';
 import { StyledText, CenteredItems } from '../components/Commons';
 import { StyledLink } from '../components/NavBar';
 import DetailButtons from '../components/DetailButtons';
+import Rating from '../components/Rating';
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
 
 export const DetailsContainer = styled.div`
 	display: flex;
-	justify-content: 'space-evenly';
 	align-items: center;
-	width: ${(props) => props.width || '70%'};
+	min-width: 220px;
+	width: ${(props) => props.width || '80%'};
 	padding: 15px;
-	@media ${({ theme }) => theme.breakpoints.large} {
-		width: 100%;
-	}
+	text-align: justify;
 	@media ${({ theme }) => theme.breakpoints.medium} {
 		width: 100%;
 	}
@@ -30,7 +29,6 @@ export const DetailsContainer = styled.div`
 
 export const StyledIcon = styled(FontAwesomeIcon)`
 	color: lightblue;
-
 `;
 
 export const ShowDetails = ({ detail }) => {
@@ -43,11 +41,7 @@ export const ShowDetails = ({ detail }) => {
 					<CenteredItems flexDirection="column">
 						<StyledText fontSize="35px">{detail.title}</StyledText>
 						<DetailsContainer width="160px">
-							<StyledIcon icon={faStar} />
-							<StyledIcon icon={faStar} />
-							<StyledIcon icon={faStar} />
-							<StyledIcon icon={faStar} />
-							<StyledIcon icon={faStar} />
+							<Rating rating={detail.vote_average} />
 						</DetailsContainer>
 						<StyledText>{detail.overview}</StyledText>
 						<StyledText>Duración: {detail.runtime}' </StyledText>
@@ -64,7 +58,8 @@ export const ShowDetails = ({ detail }) => {
 									</StyledLink>
 								))}
 						</StyledText>
-						<StyledText>Presupuesto: ${detail.budget}</StyledText>
+
+						<StyledText>Presupuesto: ${Number(detail.budget).toLocaleString()}</StyledText>
 						<StyledText>Recaudación: ${detail.revenue}</StyledText>
 						<StyledText>
 							Producción:{' '}

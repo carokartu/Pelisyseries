@@ -65,6 +65,7 @@ export const StyledText = styled.p`
 	font-size: ${(props) => props.fontSize || '18px'};
 	margin: 5px;
 	margin-left: 20px;
+	letter-spacing: 1.5px;
 `;
 
 export const SectionButton = styled.button`
@@ -77,5 +78,8 @@ export const SectionButton = styled.button`
 	font-family: ${({ theme }) => theme.fonts.alternative3};
 	&:hover {
 		filter: brightness(2);
+	}
+	@media (max-width: 600px) {
+		padding: 0;
 	}
 `;

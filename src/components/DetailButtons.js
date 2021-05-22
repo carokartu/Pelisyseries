@@ -5,7 +5,7 @@ import { SectionButton } from '../components/Commons';
 export const ButtonsBar = styled.div`
 	display: flex;
 	justify-content: center;
-	margin: 30px;
+	margin: 50px;
 	align-items: center;
 `;
 
@@ -13,22 +13,22 @@ const DetailButtons = () => {
 	return (
 		<ButtonsBar>
 			<SectionButton>
-				<StyledLink border="2px solid white" color="white">
+				<StyledLink margin="4px" fontSize="15px" border="2px solid white" color="white">
 					INFO
 				</StyledLink>
 			</SectionButton>
 			<SectionButton>
-				<StyledLink border="2px solid white" color="white">
+				<StyledLink margin="4px" fontSize="15px" border="2px solid white" color="white">
 					REPARTO
 				</StyledLink>
 			</SectionButton>
 			<SectionButton>
-				<StyledLink border="2px solid white" color="white">
+				<StyledLink margin="4px" fontSize="15px" border="2px solid white" color="white">
 					VIDEOS
 				</StyledLink>
 			</SectionButton>
 			<SectionButton>
-				<StyledLink border="2px solid white" color="white">
+				<StyledLink margin="4px" fontSize="15px" border="2px solid white" color="white">
 					SIMILARES
 				</StyledLink>
 			</SectionButton>

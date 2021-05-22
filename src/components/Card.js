@@ -13,7 +13,7 @@ export const BackdropImage = styled.div`
 	position: relative;
 	z-index: 1;
 	@media ${({ theme }) => theme.breakpoints.small} {
-		top: 10px;
+		top: 30px;
 	}
 	img {
 		filter: contrast(1.3);
