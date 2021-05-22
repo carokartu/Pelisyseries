@@ -58,3 +58,24 @@ export const ImgContainer = styled.div`
 		max-width: 165px;
 	}
 `;
+
+export const StyledText = styled.p`
+	font-family: ${({ theme }) => theme.fonts.titles.card};
+	color: ${({ theme }) => theme.colors.text};
+	font-size: ${(props) => props.fontSize || '18px'};
+	margin: 5px;
+	margin-left: 20px;
+`;
+
+export const SectionButton = styled.button`
+	border: none;
+	background-color: transparent;
+	color: white;
+	padding: 5px;
+	font-size: ${({ theme }) => theme.sizes.cardTitle};
+	letter-spacing: 3px;
+	font-family: ${({ theme }) => theme.fonts.alternative3};
+	&:hover {
+		filter: brightness(2);
+	}
+`;

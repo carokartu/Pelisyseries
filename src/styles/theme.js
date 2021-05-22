@@ -23,5 +23,9 @@ export const theme = {
 		small: '(max-width: 600px)',
 		medium: '(min-width: 600px) and (max-width: 840px)',
 		large: '(min-width: 840px)'
+	},
+	linkShadow: {
+		navBar: 'none',
+		cardLink: '4px 2px 5px grey'
 	}
 };

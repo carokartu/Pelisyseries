@@ -3,7 +3,7 @@ import NavBar from './components/NavBar';
 import Home from './views/Home';
 import Movies from './views/Movies';
 import Series from './views/Series';
-import CardDetails from './components/CardDetails';
+import CardDetails from './views/CardDetails';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 

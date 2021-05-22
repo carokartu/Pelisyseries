@@ -11,12 +11,10 @@ text-decoration: none;
 `;
 
 const StyledSection = styled.section`
-	margin-top: 60px;
-	margin-bottom: 100px;
+	margin-top: 120px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	@media (min-width: 840px) and (max-width: 1050px) {
+	@media (min-width: 840px) and (max-width: 1280px) {
 		max-width: 80%;
 		margin-left: 100px;
 	}
