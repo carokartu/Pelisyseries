@@ -32,6 +32,9 @@ export const StyledIcon = styled(FontAwesomeIcon)`
 `;
 
 export const ShowDetails = ({ detail }) => {
+	const noAmountFound = (amount) => {
+		return amount === 0 ? 'No se encontró este valor' : `$${Number(amount).toLocaleString()}`;
+	};
 	return (
 		<div>
 			<ThemeProvider theme={theme}>
@@ -59,8 +62,8 @@ export const ShowDetails = ({ detail }) => {
 								))}
 						</StyledText>
 
-						<StyledText>Presupuesto: ${Number(detail.budget).toLocaleString()}</StyledText>
-						<StyledText>Recaudación: ${detail.revenue}</StyledText>
+						<StyledText>Presupuesto: {noAmountFound(detail.budget)}</StyledText>
+						<StyledText>Recaudación: {noAmountFound(detail.revenue)}</StyledText>
 						<StyledText>
 							Producción:{' '}
 							{detail.production_companies &&
