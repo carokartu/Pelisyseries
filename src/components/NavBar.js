@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faVideo, faTv } from '@fortawesome/free-solid-svg-icons';
 import { theme } from '../styles/theme';
+import Form from './Form';
 import styled, { ThemeProvider } from 'styled-components';
 
 const StyledNavBar = styled.nav`
@@ -12,6 +13,9 @@ const StyledNavBar = styled.nav`
 	z-index: 3;
 	right: 0;
 	left: 0;
+	@media ${({ theme }) => theme.breakpoints.small} {
+		background-color: ${({ theme }) => theme.colors.background};
+	}
 }
 `;
 
@@ -20,10 +24,13 @@ color: ${({ color }) => color};
 text-decoration: none;
 margin: 15px;
 box-shadow: ${({ shadow }) => shadow};
+font-size: ${({ fontSize }) => fontSize};
+letter-spacing: ${({ letterSpacing }) => letterSpacing};
+font-family: ${({ fontFamily }) => fontFamily};
 &:hover {
 	color: ${({ theme }) => theme.colors.text};
-	filter: brightness(1.5);
-	transition: 0.3s;
+	filter: brightness(2);
+	transition: 0.1s;
 }
 &:focus {
 		border-bottom: ${({ border }) => border};
@@ -34,19 +41,27 @@ box-shadow: ${({ shadow }) => shadow};
 	}
 `;
 
+const StyledIcon = styled(FontAwesomeIcon)`
+@media ${({ theme }) => theme.breakpoints.small} {
+	font-size: 25px;
+	color: ${({ theme }) => theme.colors.primary};
+	}
+`;
+
 const NavBar = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<StyledNavBar>
 				<StyledLink color={theme.colors.secondary} to="/">
-					<FontAwesomeIcon icon={faHome} size="2x" />
+					<StyledIcon icon={faHome} size="2x" />
 				</StyledLink>
 				<StyledLink color={theme.colors.secondary} to="/peliculas">
-					<FontAwesomeIcon icon={faVideo} size="2x" />
+					<StyledIcon icon={faVideo} size="2x" />
 				</StyledLink>
 				<StyledLink color={theme.colors.secondary} to="/series">
-					<FontAwesomeIcon icon={faTv} size="2x" />
+					<StyledIcon icon={faTv} size="2x" />
 				</StyledLink>
+				<Form />
 			</StyledNavBar>
 		</ThemeProvider>
 	);

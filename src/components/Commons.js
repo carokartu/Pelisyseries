@@ -14,7 +14,7 @@ export const SectionTitle = styled.h1`
 	align-items: center;
 	cursor: pointer;
 	font-size: ${({ theme }) => theme.sizes.sectionTitle};
-	font-family: ${({ theme }) => theme.fonts.titles.section};
+	font-family: ${({ theme }) => theme.fonts.alternative3};
 	letter-spacing: 4px;
 	margin: 20px;
 	@media ${({ theme }) => theme.breakpoints.small} {
@@ -71,15 +71,7 @@ export const StyledText = styled.p`
 export const SectionButton = styled.button`
 	border: none;
 	background-color: transparent;
-	color: white;
-	padding: 5px;
-	font-size: ${({ theme }) => theme.sizes.cardTitle};
-	letter-spacing: 3px;
-	font-family: ${({ theme }) => theme.fonts.alternative3};
 	&:hover {
 		filter: brightness(2);
-	}
-	@media (max-width: 600px) {
-		padding: 0;
 	}
 `;

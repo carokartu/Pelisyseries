@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Card from './Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { CenteredItems, SectionTitle } from './Commons';
+import { CenteredItems, SectionTitle, SectionButton } from './Commons';
 import { stringToUpperCase, POSTERIMAGE } from '../utils/variables';
 import styled from 'styled-components';
 
@@ -27,10 +27,12 @@ margin-left: 25px;
 const CardSection = ({ sectionTitle, content }) => {
 	return (
 		<StyledSection>
-			<SectionTitle>
-				{stringToUpperCase(sectionTitle)}
-				<StyledIcon icon={faArrowRight} />
-			</SectionTitle>
+			<SectionButton>
+				<SectionTitle>
+					{stringToUpperCase(sectionTitle)}
+					<StyledIcon icon={faArrowRight} />
+				</SectionTitle>
+			</SectionButton>
 			<CenteredItems flexDirection="row">
 				{content.map((item) => (
 					<StyledLink key={item.id} to={`/detalle/${item.id}`}>

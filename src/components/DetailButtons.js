@@ -1,6 +1,6 @@
 import { StyledLink } from '../components/NavBar';
-import styled from 'styled-components';
-import { SectionButton } from '../components/Commons';
+import styled, { ThemeProvider } from 'styled-components';
+import { theme } from '../styles/theme';
 
 export const ButtonsBar = styled.div`
 	display: flex;
@@ -10,28 +10,30 @@ export const ButtonsBar = styled.div`
 `;
 
 const DetailButtons = () => {
+	const createButton = (text) => {
+		const buttons = [];
+		buttons.push(
+			<StyledLink
+				letterSpacing="3px"
+				fontFamily={theme.fonts.alternative3}
+				margin="4px"
+				fontSize={theme.sizes.cardTitle}
+				border="2px solid white"
+				color="white"
+			>
+				{text}
+			</StyledLink>
+		);
+		return buttons;
+	};
 	return (
 		<ButtonsBar>
-			<SectionButton>
-				<StyledLink margin="4px" fontSize="15px" border="2px solid white" color="white">
-					INFO
-				</StyledLink>
-			</SectionButton>
-			<SectionButton>
-				<StyledLink margin="4px" fontSize="15px" border="2px solid white" color="white">
-					REPARTO
-				</StyledLink>
-			</SectionButton>
-			<SectionButton>
-				<StyledLink margin="4px" fontSize="15px" border="2px solid white" color="white">
-					VIDEOS
-				</StyledLink>
-			</SectionButton>
-			<SectionButton>
-				<StyledLink margin="4px" fontSize="15px" border="2px solid white" color="white">
-					SIMILARES
-				</StyledLink>
-			</SectionButton>
+			<ThemeProvider theme={theme}>
+				{createButton('INFO')}
+				{createButton('REPARTO')}
+				{createButton('VIDEOS')}
+				{createButton('SIMILARES')}
+			</ThemeProvider>
 		</ButtonsBar>
 	);
 };
