@@ -9,8 +9,8 @@ const StyledForm = styled.form`
 	input {
 		font-size: ${({ theme }) => theme.sizes.cardTitle};
 		font-family: ${({ theme }) => theme.fonts.titles.card};
-		width: 450px;
-		padding: 10px;
+		width: 400px;
+		padding: 7px;
 		border-radius: 3px;
 		border: none;
 		color: ${({ theme }) => theme.colors.background};
@@ -19,11 +19,12 @@ const StyledForm = styled.form`
 			border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
 		}
 		@media ${({ theme }) => theme.breakpoints.medium} {
-			width: 300px;
+			width: 250px;
+			padding: 3px;
 		}
 		@media ${({ theme }) => theme.breakpoints.small} {
-			width: 200px;
-			padding: 5px;
+			width: 150px;
+			padding: 3px;
 		}
 	}
 `;

@@ -3,6 +3,9 @@ import NavBar from './components/NavBar';
 import Home from './views/Home';
 import Movies from './views/Movies';
 import Series from './views/Series';
+// import Cast from './views/Cast';
+// import Similar from './views/Similar';
+// import Videos from './views/Videos';
 import CardDetails from './views/CardDetails';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
@@ -30,6 +33,11 @@ const App = () => {
 						<Route path="/series/" component={Series} />
 						<Route path="/detalle/:id" component={CardDetails} />
 					</Switch>
+					{/* <Switch>
+						<Route path="/detalle/id/reparto/" component={Cast} />
+						<Route path="/detalle/id/videos/" component={Videos} />
+						<Route path="/detalle/id/similares/" component={Similar} />
+					</Switch> */}
 				</BrowserRouter>
 			</ThemeProvider>
 		</div>

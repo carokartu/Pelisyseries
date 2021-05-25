@@ -41,3 +41,7 @@ export const TRENDY_TVSERIES = retrieveInfo('trending/tv/week', 'en');
 export const POPULAR_TVSERIES = retrieveInfo('tv/popular', 'en');
 export const BESTRATED_TVSERIES = retrieveInfo('tv/top_rated', 'en');
 export const ONTHEAIR_TVSERIES = retrieveInfo('tv/on_the_air', 'en');
+
+export const noAmountFound = (amount) => {
+	return amount === 0 ? 'No se encontró este valor' : `$${Number(amount).toLocaleString()}`;
+};

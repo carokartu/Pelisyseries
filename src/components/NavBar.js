@@ -13,8 +13,10 @@ const StyledNavBar = styled.nav`
 	z-index: 3;
 	right: 0;
 	left: 0;
+
 	@media ${({ theme }) => theme.breakpoints.small} {
 		background-color: ${({ theme }) => theme.colors.background};
+		padding: 5px;
 	}
 }
 `;
@@ -43,7 +45,7 @@ font-family: ${({ fontFamily }) => fontFamily};
 
 const StyledIcon = styled(FontAwesomeIcon)`
 @media ${({ theme }) => theme.breakpoints.small} {
-	font-size: 25px;
+	font-size: 22px;
 	color: ${({ theme }) => theme.colors.primary};
 	}
 `;
@@ -52,13 +54,13 @@ const NavBar = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<StyledNavBar>
-				<StyledLink color={theme.colors.secondary} to="/">
+				<StyledLink margin="6px" color={theme.colors.secondary} to="/">
 					<StyledIcon icon={faHome} size="2x" />
 				</StyledLink>
-				<StyledLink color={theme.colors.secondary} to="/peliculas">
+				<StyledLink margin="6px" color={theme.colors.secondary} to="/peliculas">
 					<StyledIcon icon={faVideo} size="2x" />
 				</StyledLink>
-				<StyledLink color={theme.colors.secondary} to="/series">
+				<StyledLink margin="6px" color={theme.colors.secondary} to="/series">
 					<StyledIcon icon={faTv} size="2x" />
 				</StyledLink>
 				<Form />

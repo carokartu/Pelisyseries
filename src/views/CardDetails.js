@@ -1,84 +1,27 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faFacebookSquare, faLink, faImdb, faInstagram } from '@fortawesome/free-solid-svg-icons';
-import { retrieveInfo, BACKDROPIMAGE, POSTERIMAGE } from '../utils/variables';
+import { useParams, BrowserRouter, Route, Switch } from 'react-router-dom';
+import { retrieveInfo, BACKDROPIMAGE } from '../utils/variables';
 import Card from '../components/Card';
-import { StyledText, CenteredItems } from '../components/Commons';
-import { StyledLink } from '../components/NavBar';
 import DetailButtons from '../components/DetailButtons';
-import Rating from '../components/Rating';
-import styled, { ThemeProvider } from 'styled-components';
-import { theme } from '../styles/theme';
-
-export const DetailsContainer = styled.div`
-	display: flex;
-	align-items: center;
-	min-width: 220px;
-	width: ${(props) => props.width || '80%'};
-	padding: 15px;
-	text-align: justify;
-	@media ${({ theme }) => theme.breakpoints.medium} {
-		width: 100%;
-	}
-	@media ${({ theme }) => theme.breakpoints.small} {
-		width: 100%;
-		flex-direction: ${({ flexDirection }) => flexDirection};
-	}
-`;
-
-export const StyledIcon = styled(FontAwesomeIcon)`
-	color: lightblue;
-`;
+import Info from '../views/Info';
+import Cast from '../views/Cast';
+import Similar from '../views/Similar';
+import Videos from '../views/Videos';
 
 export const ShowDetails = ({ detail }) => {
-	const noAmountFound = (amount) => {
-		return amount === 0 ? 'No se encontró este valor' : `$${Number(amount).toLocaleString()}`;
-	};
 	return (
 		<div>
-			<ThemeProvider theme={theme}>
+			<BrowserRouter>
 				<DetailButtons />
-				<DetailsContainer flexDirection="column">
-					<Card key={detail.id} isDetail={false} title={''} img={POSTERIMAGE + detail.poster_path} />
-					<CenteredItems flexDirection="column">
-						<StyledText fontSize="35px">{detail.title}</StyledText>
-						<DetailsContainer width="160px">
-							<Rating rating={detail.vote_average} />
-						</DetailsContainer>
-						<StyledText>{detail.overview}</StyledText>
-						<StyledText>Duración: {detail.runtime}' </StyledText>
-						<StyledText>
-							Géneros:{' '}
-							{detail.genres &&
-								detail.genres.map((genre) => (
-									<StyledLink
-										margin="3px"
-										color={theme.colors.text}
-										shadow={theme.linkShadow.cardLink}
-									>
-										{genre.name}{' '}
-									</StyledLink>
-								))}
-						</StyledText>
+				<Info detail={detail} />
 
-						<StyledText>Presupuesto: {noAmountFound(detail.budget)}</StyledText>
-						<StyledText>Recaudación: {noAmountFound(detail.revenue)}</StyledText>
-						<StyledText>
-							Producción:{' '}
-							{detail.production_companies &&
-								detail.production_companies.map((company) => company.name + '. ')}
-						</StyledText>
-						<DetailsContainer width="210px">
-							{/* <StyledIcon icon={faImdb} />
-					<StyledIcon icon={faTwitter} />
-					<StyledIcon icon={faFacebookSquare} />
-					<StyledIcon icon={faInstagram} /> */}
-							<StyledIcon icon={faLink} />
-						</DetailsContainer>
-					</CenteredItems>
-				</DetailsContainer>
-			</ThemeProvider>
+				<Switch>
+					{/* <Route path="/detalle/:id" component={Info} /> */}
+					<Route path="/detalle/id/reparto/" component={Cast} />
+					<Route path="/detalle/id/videos/" component={Videos} />
+					<Route path="/detalle/id/similares/" component={Similar} />
+				</Switch>
+			</BrowserRouter>
 		</div>
 	);
 };

@@ -7,13 +7,20 @@ export const ButtonsBar = styled.div`
 	justify-content: center;
 	margin: 50px;
 	align-items: center;
+	@media ${({ theme }) => theme.breakpoints.medium} {
+		max-width: 70%;
+	}
+	@media ${({ theme }) => theme.breakpoints.small} {
+		max-width: 60%;
+	}
 `;
 
-const DetailButtons = () => {
-	const createButton = (text) => {
+const DetailButtons = (id) => {
+	const createButton = (text, route) => {
 		const buttons = [];
 		buttons.push(
 			<StyledLink
+				to={route}
 				letterSpacing="3px"
 				fontFamily={theme.fonts.alternative3}
 				margin="4px"
@@ -29,10 +36,12 @@ const DetailButtons = () => {
 	return (
 		<ButtonsBar>
 			<ThemeProvider theme={theme}>
-				{createButton('INFO')}
-				{createButton('REPARTO')}
-				{createButton('VIDEOS')}
-				{createButton('SIMILARES')}
+				<nav>
+					{createButton('INFO', `/detalle/id/info`)}
+					{createButton('REPARTO', `/detalle/id/reparto`)}
+					{createButton('VIDEOS', `/detalle/id/videos`)}
+					{createButton('SIMILARES', `/detalle/id/similares`)}
+				</nav>
 			</ThemeProvider>
 		</ButtonsBar>
 	);

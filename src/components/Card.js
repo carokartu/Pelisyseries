@@ -13,9 +13,11 @@ export const BackdropImage = styled.div`
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
-	@media ${({ theme }) => theme.breakpoints.small} {
-		top: 30px;
+
+	@media ${({ theme }) => theme.breakpoints.medium} {
+		max-height: 50vw;
 	}
+
 	img {
 		filter: contrast(1.3);
 		width: 100%;

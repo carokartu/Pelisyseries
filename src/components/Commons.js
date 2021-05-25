@@ -66,6 +66,9 @@ export const StyledText = styled.p`
 	margin: 5px;
 	margin-left: 20px;
 	letter-spacing: 1.5px;
+	@media ${({ theme }) => theme.breakpoints.small} {
+		font-size: ${({ fontSize }) => fontSize};
+	}
 `;
 
 export const SectionButton = styled.button`
