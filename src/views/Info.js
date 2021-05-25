@@ -18,8 +18,10 @@ export const DetailsContainer = styled.div`
 	text-align: justify;
 	@media ${({ theme }) => theme.breakpoints.medium} {
 		flex-direction: ${({ flexDirection }) => flexDirection};
+		width: 100%;
 	}
 	@media ${({ theme }) => theme.breakpoints.small} {
+		width: 100%;
 		flex-direction: ${({ flexDirection }) => flexDirection};
 	}
 `;
