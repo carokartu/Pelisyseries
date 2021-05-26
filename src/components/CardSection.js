@@ -11,10 +11,11 @@ text-decoration: none;
 `;
 
 const StyledSection = styled.section`
-	margin-top: 120px;
+	margin-top: 110px;
 	display: flex;
 	flex-direction: column;
-	@media (min-width: 840px) and (max-width: 1280px) {
+	justify-content: center;
+	@media (min-width: 840px) and (max-width: 1050px) {
 		max-width: 80%;
 		margin-left: 100px;
 	}
@@ -37,8 +38,7 @@ const CardSection = ({ sectionTitle, content }) => {
 				{content.map((item) => (
 					<StyledLink key={item.id} to={`/detalle/${item.id}`}>
 						<Card
-							isDetail={false}
-							key={item.id || item.id}
+							key={item.title || item.name}
 							title={item.title || item.name}
 							img={POSTERIMAGE + item.poster_path}
 						/>

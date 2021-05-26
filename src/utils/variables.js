@@ -10,16 +10,6 @@ export const retrieveInfo = (endpoint, language) => {
 	return `${URL_BASE}${endpoint}?${API_KEY}${pickLanguage(language)}`;
 };
 
-export const defineContent = (content) => {
-	if (content.toString().includes('movie')) {
-		console.log(content);
-		return 'movie';
-	} else {
-		console.log(content);
-		return 'tv';
-	}
-};
-
 export const stringToUpperCase = (str) => {
 	return str.toUpperCase();
 };

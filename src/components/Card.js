@@ -1,7 +1,6 @@
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
 import { CenteredItems, CardTitle, ImgContainer } from './Commons';
-import { defineContent } from '../utils/variables';
 import NoPhoto from '../utils/No-Photo-Available.jpg';
 import styled from 'styled-components';
 import { ShowDetails } from '../views/CardDetails';
@@ -32,7 +31,7 @@ const Card = ({ title, img, isDetail, content }) => {
 					<BackdropImage>
 						<img alt={`poster de ` + title} src={img || NoPhoto} />
 					</BackdropImage>
-					<ShowDetails type={defineContent(content)} detail={content} />
+					<ShowDetails detail={content} />
 				</CenteredItems>
 			) : (
 				<CenteredItems flexDirection="column" margin="5px">
