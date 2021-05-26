@@ -36,7 +36,7 @@ const CardSection = ({ sectionTitle, content }) => {
 			</SectionButton>
 			<CenteredItems flexDirection="row">
 				{content.map((item) => (
-					<StyledLink key={item.id} to={`/detalle/${item.id}`}>
+					<StyledLink key={item.id} to={`${item.title ? 'pelicula' : 'serie'}/detalle/${item.id}`}>
 						<Card
 							key={item.title || item.name}
 							title={item.title || item.name}

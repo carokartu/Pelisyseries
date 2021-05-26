@@ -31,18 +31,24 @@ export const StyledIcon = styled(FontAwesomeIcon)`
 	font-size: 30px;
 `;
 
-const Info = ({ detail }) => {
+const Info = ({ detail, mediaType, isTvShow }) => {
+	if (mediaType.includes('serie')) {
+		isTvShow = true;
+	} else {
+		isTvShow = false;
+	}
+
 	return (
 		<ThemeProvider theme={theme}>
 			<DetailsContainer flexDirection="column">
 				<Card key={detail.id} isDetail={false} title={''} img={POSTERIMAGE + detail.poster_path} />
 				<CenteredItems flexDirection="column">
-					<StyledText fontSize="28px">{detail.title}</StyledText>
+					<StyledText fontSize="28px">{!isTvShow ? detail.title : detail.name}</StyledText>
 					<DetailsContainer width="160px">
 						<Rating rating={detail.vote_average} />
 					</DetailsContainer>
 					<StyledText>{detail.overview}</StyledText>
-					<StyledText>Duración: {detail.runtime}' </StyledText>
+					<StyledText>Duración: {!isTvShow ? detail.runtime : detail.episode_run_time}' </StyledText>
 					<StyledText>
 						Géneros:{' '}
 						{detail.genres &&
@@ -52,9 +58,22 @@ const Info = ({ detail }) => {
 								</StyledLink>
 							))}
 					</StyledText>
-
-					<StyledText>Presupuesto: {noAmountFound(detail.budget)}</StyledText>
-					<StyledText>Recaudación: {noAmountFound(detail.revenue)}</StyledText>
+					<StyledText>
+						{' '}
+						{!isTvShow ? (
+							`Presupuesto: ${noAmountFound(detail.budget)}`
+						) : (
+							` Temporadas: ${detail.number_of_seasons}`
+						)}
+					</StyledText>{' '}
+					<StyledText>
+						{' '}
+						{!isTvShow ? (
+							`Recaudación: ${noAmountFound(detail.revenue)}`
+						) : (
+							`Episodios: ${detail.number_of_episodes}`
+						)}{' '}
+					</StyledText>
 					<StyledText>
 						Producción:{' '}
 						{detail.production_companies &&

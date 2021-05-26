@@ -8,11 +8,7 @@ const useFetch = (url) => {
 	// const [ isLoading, setIsLoading ] = useState(true);
 
 	useEffect(() => {
-		fetch(url).then((res) => res.json()).then(
-			(data) => setContent(data.results.slice(0, 5))
-
-			// data.results.map((result) => return result.media_type))
-		);
+		fetch(url).then((res) => res.json()).then((data) => setContent(data.results.slice(0, 5)));
 	}, []);
 
 	return content;

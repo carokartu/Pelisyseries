@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { retrieveInfo, BACKDROPIMAGE } from '../utils/variables';
 import Card from '../components/Card';
 import DetailButtons from '../components/DetailButtons';
@@ -12,7 +12,7 @@ export const ShowDetails = ({ detail }) => {
 	return (
 		<div>
 			<DetailButtons />
-			<Info detail={detail} />
+			<Info mediaType={useLocation().pathname} detail={detail} />
 		</div>
 	);
 };
@@ -20,11 +20,12 @@ export const ShowDetails = ({ detail }) => {
 const CardDetails = () => {
 	const [ detail, setDetail ] = useState([]);
 	const params = useParams();
+	const location = useLocation();
 
 	useEffect(() => {
-		fetch(retrieveInfo(`movie/${params.id}${'es-ES'}`)).then((res) => res.json()).then((data) => setDetail(data));
-
-		fetch(retrieveInfo(`tv/${params.id}${'es-ES'}`)).then((res) => res.json()).then((data) => setDetail(data));
+		fetch(retrieveInfo(`${location.pathname.includes('serie') ? 'tv' : 'movie'}/${params.id}${'es-ES'}`))
+			.then((res) => res.json())
+			.then((data) => setDetail(data));
 	}, []);
 
 	return (
