@@ -21,7 +21,6 @@ const CardDetails = () => {
 	const [ detail, setDetail ] = useState([]);
 	const params = useParams();
 
-	console.log(detail);
 	useEffect(() => {
 		fetch(retrieveInfo(`movie/${params.id}${'es-ES'}`)).then((res) => res.json()).then((data) => setDetail(data));
 
