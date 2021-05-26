@@ -38,7 +38,7 @@ const CardSection = ({ sectionTitle, content }) => {
 					<StyledLink key={item.id} to={`/detalle/${item.id}`}>
 						<Card
 							isDetail={false}
-							key={item.title || item.name}
+							key={item.id || item.id}
 							title={item.title || item.name}
 							img={POSTERIMAGE + item.poster_path}
 						/>

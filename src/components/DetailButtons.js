@@ -7,6 +7,9 @@ export const ButtonsBar = styled.div`
 	justify-content: center;
 	margin: 50px;
 	align-items: center;
+	@media ${({ theme }) => theme.breakpoints.small} {
+		margin: 30px;
+	}
 `;
 
 const DetailButtons = (id) => {

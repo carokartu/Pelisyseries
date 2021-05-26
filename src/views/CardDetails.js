@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, BrowserRouter, Route, Switch } from 'react-router-dom';
-import { retrieveInfo, BACKDROPIMAGE } from '../utils/variables';
+import { retrieveInfo, defineContent, BACKDROPIMAGE } from '../utils/variables';
 import Card from '../components/Card';
 import DetailButtons from '../components/DetailButtons';
 import Info from '../views/Info';
@@ -30,6 +30,7 @@ const CardDetails = () => {
 	const [ detail, setDetail ] = useState([]);
 	const params = useParams();
 
+	console.log(detail);
 	useEffect(() => {
 		fetch(retrieveInfo(`movie/${params.id}${'es-ES'}`)).then((res) => res.json()).then((data) => setDetail(data));
 	}, []);
