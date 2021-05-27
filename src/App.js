@@ -34,9 +34,9 @@ const App = () => {
 						<Route path="/series/" component={Series} />
 						<Route path="/pelicula/detalle/:id" component={CardDetails} />
 						<Route path="/serie/detalle/:id" component={CardDetails} />
-						<Route path="/detalle/:id/reparto/" component={Cast} />
-						<Route path="/detalle/:id/videos/" component={Videos} />
-						<Route path="/detalle/:id/similares/" component={Similar} />
+						<Route path="/pelicula/detalle/:id/reparto/" component={Cast} />
+						<Route path="/pelicula/detalle/:id/videos/" component={Videos} />
+						<Route path="/pelicula/detalle/:id/similares/" component={Similar} />
 					</Switch>
 				</BrowserRouter>
 			</ThemeProvider>

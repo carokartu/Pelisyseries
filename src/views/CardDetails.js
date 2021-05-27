@@ -4,18 +4,6 @@ import { retrieveInfo, BACKDROPIMAGE } from '../utils/variables';
 import Card from '../components/Card';
 import DetailButtons from '../components/DetailButtons';
 import Info from '../views/Info';
-// import Cast from '../views/Cast';
-// import Similar from '../views/Similar';
-// import Videos from '../views/Videos';
-
-export const ShowDetails = ({ detail }) => {
-	return (
-		<div>
-			<DetailButtons />
-			<Info mediaType={useLocation().pathname} detail={detail} />
-		</div>
-	);
-};
 
 const CardDetails = () => {
 	const [ detail, setDetail ] = useState([]);
@@ -37,6 +25,23 @@ const CardDetails = () => {
 				img={BACKDROPIMAGE + detail.backdrop_path}
 				content={detail}
 			/>
+		</div>
+	);
+};
+
+export const ShowDetails = ({ detail }) => {
+	const pathname = useLocation().pathname;
+	const defineContent = (string) => {
+		if (string.includes('serie')) {
+			return 'serie';
+		} else {
+			return 'pelicula';
+		}
+	};
+	return (
+		<div>
+			<DetailButtons id={detail.id} type={defineContent(pathname)} />
+			<Info mediaType={pathname} detail={detail} />
 		</div>
 	);
 };

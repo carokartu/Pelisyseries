@@ -12,10 +12,9 @@ export const ButtonsBar = styled.div`
 	}
 `;
 
-const DetailButtons = (id) => {
+const DetailButtons = ({ id, type }) => {
 	const createButton = (text, route) => {
-		const buttons = [];
-		buttons.push(
+		return (
 			<StyledLink
 				to={route}
 				letterSpacing="3px"
@@ -28,16 +27,18 @@ const DetailButtons = (id) => {
 				{text}
 			</StyledLink>
 		);
-		return buttons;
 	};
 	return (
 		<ButtonsBar>
 			<ThemeProvider theme={theme}>
 				<nav>
-					{createButton('INFO', `/detalle/id/info`)}
-					{createButton('REPARTO', `/detalle/id/reparto`)}
-					{createButton('VIDEOS', `/detalle/id/videos`)}
-					{createButton('SIMILARES', `/detalle/id/similares`)}
+					{createButton('INFO', `/${type}/detalle/${id}/info`)}
+					{createButton('REPARTO', `/${type}/detalle/${id}/reparto`)}
+					{createButton(
+						`${type === 'pelicula' ? 'VIDEOS' : 'EPISODIOS'}`,
+						`/${type}/detalle/${id}/${type === 'pelicula' ? 'videos' : 'episodios'}`
+					)}
+					{createButton('SIMILARES', `/${type}/detalle/${id}/similares`)}
 				</nav>
 			</ThemeProvider>
 		</ButtonsBar>

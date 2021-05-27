@@ -39,10 +39,10 @@ export const ImgContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 250px;
-	min-height: 375px;
 	overflow: hidden;
 	img {
 		width: 100%;
+		min-height: 375px;
 	}
 	&:hover {
 		img {
