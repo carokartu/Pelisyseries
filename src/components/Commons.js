@@ -41,8 +41,11 @@ export const ImgContainer = styled.div`
 	width: 250px;
 	overflow: hidden;
 	img {
+		height: 375px;
 		width: 100%;
-		min-height: 375px;
+		@media (max-width: 1100px) {
+			height: 290px;
+		}
 	}
 	&:hover {
 		img {

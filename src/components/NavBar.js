@@ -16,7 +16,7 @@ const StyledNavBar = styled.nav`
 
 	@media ${({ theme }) => theme.breakpoints.small} {
 		background-color: ${({ theme }) => theme.colors.background};
-		padding: 5px;
+		padding: 7px;
 	}
 }
 `;
@@ -45,7 +45,7 @@ font-family: ${({ fontFamily }) => fontFamily};
 
 const StyledIcon = styled(FontAwesomeIcon)`
 @media ${({ theme }) => theme.breakpoints.small} {
-	font-size: 22px;
+	font-size: 25px;
 	color: ${({ theme }) => theme.colors.primary};
 	}
 `;
