@@ -8,6 +8,7 @@ import Cast from './views/Cast';
 import Similar from './views/Similar';
 import Videos from './views/Videos';
 import CardDetails from './views/CardDetails';
+import ShowDetails from './views/CardDetails';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 
@@ -33,7 +34,7 @@ const App = () => {
 						<Route path="/peliculas/" component={Movies} />
 						<Route path="/series/" component={Series} />
 						<Route path="/pelicula/detalle/:id" component={CardDetails} />
-						<Route path="/serie/detalle/:id" component={CardDetails} />
+						<Route path="/serie/detalle/:id/" component={ShowDetails} />
 						<Route path="/pelicula/detalle/:id/reparto/" component={Cast} />
 						<Route path="/pelicula/detalle/:id/videos/" component={Videos} />
 						<Route path="/pelicula/detalle/:id/similares/" component={Similar} />

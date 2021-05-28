@@ -5,11 +5,8 @@ import { theme } from '../styles/theme';
 export const ButtonsBar = styled.div`
 	display: flex;
 	justify-content: center;
-	margin: 50px;
+	padding: 50px;
 	align-items: center;
-	@media ${({ theme }) => theme.breakpoints.small} {
-		margin: 30px;
-	}
 `;
 
 const DetailButtons = ({ id, type }) => {
@@ -20,7 +17,7 @@ const DetailButtons = ({ id, type }) => {
 				letterSpacing="3px"
 				fontFamily={theme.fonts.alternative3}
 				margin="4px"
-				fontSize={theme.sizes.cardTitle}
+				fontSize="15px"
 				border="2px solid white"
 				color="white"
 			>

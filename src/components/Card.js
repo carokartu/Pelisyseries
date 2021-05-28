@@ -15,8 +15,12 @@ export const BackdropImage = styled.div`
 
 	@media ${({ theme }) => theme.breakpoints.medium} {
 		max-height: 50vw;
+		top: 28px;
 	}
 
+	@media ${({ theme }) => theme.breakpoints.small} {
+		top: 35px;
+	}
 	img {
 		filter: contrast(1.3);
 		width: 100%;
