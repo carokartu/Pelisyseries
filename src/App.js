@@ -1,8 +1,11 @@
+// import { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+// import { section_types } from './utils/variables';
 import NavBar from './components/NavBar';
 import Home from './views/Home';
 import Movies from './views/Movies';
 import Series from './views/Series';
+import AllResults from './views/AllResults';
 // import Info from './views/Info';
 import Cast from './views/Cast';
 import Similar from './views/Similar';
@@ -23,6 +26,8 @@ body {
 `;
 
 const App = () => {
+	// const [ activeSection, setActiveSection ] = useState('');
+
 	return (
 		<div>
 			<ThemeProvider theme={theme}>
@@ -34,6 +39,8 @@ const App = () => {
 						<Route path="/peliculas/" component={Movies} />
 						<Route path="/series/" component={Series} />
 						<Route path="/pelicula/detalle/:id" component={CardDetails} />
+						<Route path="/:categoria/pagina/1/" component={AllResults} />
+
 						<Route path="/serie/detalle/:id/" component={ShowDetails} />
 						<Route path="/pelicula/detalle/:id/reparto/" component={Cast} />
 						<Route path="/pelicula/detalle/:id/videos/" component={Videos} />

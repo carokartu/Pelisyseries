@@ -6,16 +6,16 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
 
 const Movies = () => {
-	const popular = useFetch(POPULAR_MOVIES);
-	const bestRated = useFetch(BESTRATED_MOVIES);
-	const upComing = useFetch(UPCOMING_MOVIES);
+	const popular = useFetch(POPULAR_MOVIES, true);
+	const bestRated = useFetch(BESTRATED_MOVIES, true);
+	const upComing = useFetch(UPCOMING_MOVIES, true);
 
 	return (
 		<div>
 			<ThemeProvider theme={theme}>
-				<CardSection content={popular} sectionTitle="Películas populares" />
-				<CardSection content={bestRated} sectionTitle="Películas con mejores críticas" />
-				<CardSection content={upComing} sectionTitle="Películas a estrenarse" />
+				<CardSection content={popular} sectionTitle="Películas populares" isPreview={true} />
+				<CardSection content={bestRated} sectionTitle="Películas con mejores críticas" isPreview={true} />
+				<CardSection content={upComing} sectionTitle="Películas a estrenarse" isPreview={true} />
 			</ThemeProvider>
 		</div>
 	);

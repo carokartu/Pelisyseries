@@ -12,7 +12,6 @@ export const SectionTitle = styled.h1`
 	color: ${({ theme }) => theme.colors.text};
 	display: flex;
 	align-items: center;
-	cursor: pointer;
 	font-size: ${({ theme }) => theme.sizes.sectionTitle};
 	font-family: ${({ theme }) => theme.fonts.alternative3};
 	letter-spacing: 4px;
@@ -71,13 +70,5 @@ export const StyledText = styled.p`
 	letter-spacing: 1.5px;
 	@media ${({ theme }) => theme.breakpoints.small} {
 		font-size: ${({ fontSize }) => fontSize};
-	}
-`;
-
-export const SectionButton = styled.button`
-	border: none;
-	background-color: transparent;
-	&:hover {
-		filter: brightness(2);
 	}
 `;

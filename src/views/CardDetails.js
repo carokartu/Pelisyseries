@@ -29,15 +29,16 @@ const CardDetails = () => {
 	);
 };
 
+export const defineContent = (string) => {
+	if (string.includes('serie')) {
+		return 'serie';
+	} else {
+		return 'pelicula';
+	}
+};
+
 export const ShowDetails = ({ detail }) => {
 	const pathname = useLocation().pathname;
-	const defineContent = (string) => {
-		if (string.includes('serie')) {
-			return 'serie';
-		} else {
-			return 'pelicula';
-		}
-	};
 	return (
 		<div>
 			<DetailButtons id={detail.id} type={defineContent(pathname)} />

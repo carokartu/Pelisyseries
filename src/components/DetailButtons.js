@@ -17,7 +17,7 @@ const DetailButtons = ({ id, type }) => {
 				letterSpacing="3px"
 				fontFamily={theme.fonts.alternative3}
 				margin="4px"
-				fontSize="15px"
+				fontSize="18px"
 				border="2px solid white"
 				color="white"
 			>

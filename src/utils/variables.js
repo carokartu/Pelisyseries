@@ -2,6 +2,17 @@ export const URL_BASE = 'https://api.themoviedb.org/3/';
 export const API_KEY = 'api_key=60f4e8225b109e5131a88c96f3fecfc0';
 export const QUERY_PARAMS = '&language=en-ES&page=1';
 
+export const section_types = {
+	trendyMovies: 'trendy-movies',
+	trendyTvSeries: 'trendy-series',
+	popularMovies: 'popular-movies',
+	popularSeries: 'popular-series',
+	bestRatedMovies: 'bestrated-movies',
+	bestRatedSeries: 'bestrated-series',
+	upComingMovies: 'upcoming-movies',
+	upComingSeries: 'upcoming-series'
+};
+
 export const pickLanguage = (language) => {
 	return `&language=${language}&page=1`;
 };
