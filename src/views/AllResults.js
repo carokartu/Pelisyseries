@@ -21,16 +21,12 @@ const AllResults = () => {
 	const popularMovies = useFetch(POPULAR_MOVIES, false);
 	const bestRatedMovies = useFetch(BESTRATED_MOVIES, false);
 	const upComingMovies = useFetch(UPCOMING_MOVIES, false);
-
 	const popularTvSeries = useFetch(POPULAR_TVSERIES, false);
 	const bestRatedTvSeries = useFetch(BESTRATED_TVSERIES, false);
 	const onTheAirTvSeries = useFetch(ONTHEAIR_TVSERIES, false);
-
 	const trendyMovies = useFetch(TRENDY_MOVIES, false);
 	const trendySeries = useFetch(TRENDY_TVSERIES, false);
-	console.log(trendySeries);
 
-	console.log(trendyMovies);
 	return (
 		<div>
 			<ThemeProvider theme={theme}>
@@ -42,7 +38,7 @@ const AllResults = () => {
 					sectionTitle="Películas con mejores críticas"
 					isPreview={false}
 				/>
-				<CardSection content={upComingMovies} sectionTitle="Películas a estrenarse" isPreview={false} />
+				<CardSection content={upComingMovies} sectionTitle="Próximos estrenos" isPreview={false} />
 				<CardSection content={popularTvSeries} sectionTitle="Series populares" isPreview={false} />
 				<CardSection content={bestRatedTvSeries} sectionTitle="Series con mejores críticas" isPreview={false} />
 				<CardSection content={onTheAirTvSeries} sectionTitle="Series al aire" isPreview={false} />

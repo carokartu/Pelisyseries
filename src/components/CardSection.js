@@ -26,7 +26,7 @@ export const StyledIcon = styled(FontAwesomeIcon)`
 margin-left: 25px;
 `;
 
-const CardSection = ({ sectionTitle, content, isPreview }) => {
+const CardSection = ({ sectionTitle, content, isPreview }, activeView) => {
 	const title = (
 		<SectionTitle>
 			{stringToUpperCase(sectionTitle)}
@@ -45,35 +45,32 @@ const CardSection = ({ sectionTitle, content, isPreview }) => {
 			</StyledLink>
 		);
 	} 
+
 	const type = (title) => {
-		if (title.includes('series')) {
-			if (title.includes('tendencia')) {
-				return 'series/tendencia'
-			} else if (title.includes('populares')) {
-				return 'series/populares'
-			} else if (title.includes('mejores')) {
-				return 'series/mejorcalificadas'
-			} else if (title.includes('al aire')) {
-				return 'series/alaire'
-			}
-		} else if (stringToUpperCase(title).includes('películas')) {
-			if (title.includes('tendencia')) {
+		if (title.includes('series') && title.includes('tendencia')) { return 'series/tendencia' }
+		else if (title.includes('películas') && title.includes('tendencia')) {
 				return 'peliculas/tendencia'
-			} else if (title.includes('populares')) {
-				return 'peliculas/populares'
-			} else if (title.includes('mejores')) {
-				return 'peliculas/mejorcalificadas'
-			} else if (title.includes('al aire')) {
-				return 'peliculas/proximosestrenos'
-			}
-		}
+			} else if (title.includes('populares') && title.includes('series')) {
+				return 'series/populares'
+			} else if (title.includes('populares') && title.includes('películas')) {
+				return 'peliculas/populares' }
+				else if (title.includes('mejores') && title.includes('series')) {
+					return 'series/mejor-calificadas'
+				} else if (title.includes('mejores') && title.includes('películas')) {
+					return 'peliculas/mejor-calificadas'
+				
+			} else if (title.includes('al aire') && title.includes('series')) {
+				return 'series/al-aire'
+			} else if (title.includes('estrenos') && title.includes('películas')) {
+				return 'peliculas/proximos-estrenos'
+			} 
 	}
 	return (
 		<StyledSection>
 			{isPreview ? <StyledLink to={`/${type(sectionTitle)}/pagina/1/`}>{title}</StyledLink> : title}
 			<CenteredItems flexDirection="row">
 				{!isPreview && content ? (
-					content?.results?.map((item) => cards(item))
+					content.results?.map((item) => cards(item))
 				) : (
 					content.map((item) => (
 						cards(item)

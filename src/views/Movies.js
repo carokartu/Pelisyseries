@@ -15,7 +15,7 @@ const Movies = () => {
 			<ThemeProvider theme={theme}>
 				<CardSection content={popular} sectionTitle="Películas populares" isPreview={true} />
 				<CardSection content={bestRated} sectionTitle="Películas con mejores críticas" isPreview={true} />
-				<CardSection content={upComing} sectionTitle="Películas a estrenarse" isPreview={true} />
+				<CardSection content={upComing} sectionTitle="Próximos estrenos" isPreview={true} />
 			</ThemeProvider>
 		</div>
 	);

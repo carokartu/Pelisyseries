@@ -10,11 +10,14 @@ const CardDetails = () => {
 	const params = useParams();
 	const location = useLocation();
 
-	useEffect(() => {
-		fetch(retrieveInfo(`${location.pathname.includes('serie') ? 'tv' : 'movie'}/${params.id}${'es-ES'}`))
-			.then((res) => res.json())
-			.then((data) => setDetail(data));
-	}, []);
+	useEffect(
+		() => {
+			fetch(retrieveInfo(`${location.pathname.includes('serie') ? 'tv' : 'movie'}/${params.id}`, 'es-ES', '1'))
+				.then((res) => res.json())
+				.then((data) => setDetail(data));
+		},
+		[ location ]
+	);
 
 	return (
 		<div>

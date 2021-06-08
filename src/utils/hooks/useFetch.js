@@ -14,9 +14,12 @@ const useFetch = (url, isPreview) => {
 		}
 	};
 
-	useEffect(() => {
-		fetch(url).then((res) => res.json()).then((data) => setContent(defineView(data)));
-	}, []);
+	useEffect(
+		() => {
+			fetch(url).then((res) => res.json()).then((data) => setContent(defineView(data)));
+		},
+		[ url ]
+	);
 
 	return content;
 };
